@@ -5,18 +5,19 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>14.0.0</version>
+    <version>15.1.0</version>
   </parent>
 
   <name>Bloomreach OAI-PMH Provider</name>
   <description>Bloomreach OAI-PMH Provider</description>
   <groupId>org.bloomreach.forge.oai-pmh-provider</groupId>
   <artifactId>oai-pmh-provider</artifactId>
-  <version>5.0.1-SNAPSHOT</version>
+  <version>6.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
-    <plugin.site.version>3.9.1</plugin.site.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
   <scm>
@@ -94,7 +95,7 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.10</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -110,7 +111,7 @@
     <repository>
       <id>hippo-maven2-forge</id>
       <name>Bloomreach Forge Maven 2 repository.</name>
-      <url>http://maven.onehippo.com/maven2-forge/</url>
+      <url>https://maven.onehippo.com/maven2-forge/</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -122,7 +123,7 @@
     <repository>
       <id>hippo-maven2</id>
       <name>Hippo maven 2 repository.</name>
-      <url>http://maven.onehippo.com/maven2/</url>
+      <url>https://maven.onehippo.com/maven2/</url>
       <snapshots/>
       <releases>
         <updatePolicy>never</updatePolicy>
@@ -135,20 +136,12 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>${plugin.site.version}</version>
+        <version>${maven.plugin.site.version}</version>
       </plugin>
     </plugins>
   </build>
@@ -161,7 +154,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
-            <version>${plugin.site.version}</version>
+            <version>${maven.plugin.site.version}</version>
             <configuration>
               <outputDirectory>docs</outputDirectory>
             </configuration>

@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 import javax.jcr.Session;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.hippoecm.hst.configuration.hosting.Mount;
 import org.hippoecm.hst.content.beans.Node;
 import org.hippoecm.hst.content.beans.manager.ObjectConverter;
@@ -138,29 +138,7 @@ public class OAIPMHResource extends BaseOAIResource {
             final String from = getFromResumptionTokenOrUseDefaultNull(resumptionToken, 4, null);
             final String until = getFromResumptionTokenOrUseDefaultNull(resumptionToken, 5, null);
 
-            final Calendar fromCalendar;
-            final Calendar untilCalendar;
-            try {
-                fromCalendar = getSimpleDate(from);
-                untilCalendar = getSimpleDate(until);
-            } catch (ParseException e) {
-                throw new OAIException(OAIPMHerrorcodeType.BAD_ARGUMENT, THE_REQUEST_INCLUDES_ILLEGAL_ARGUMENTS_IS_MISSING_REQUIRED_ARGUMENTS_INCLUDES_A_REPEATED_ARGUMENT_OR_VALUES_FOR_ARGUMENTS_HAVE_AN_ILLEGAL_SYNTAX_FROM_ARGUMENT_MUST_BE_SMALLER_THAN_UNTIL_ARGUMENT);
-            }
-            if (fromCalendar != null && untilCalendar != null) {
-                if (fromCalendar.getTimeInMillis() > untilCalendar.getTimeInMillis()) {
-                    throw new OAIException(OAIPMHerrorcodeType.BAD_ARGUMENT, THE_REQUEST_INCLUDES_ILLEGAL_ARGUMENTS_IS_MISSING_REQUIRED_ARGUMENTS_INCLUDES_A_REPEATED_ARGUMENT_OR_VALUES_FOR_ARGUMENTS_HAVE_AN_ILLEGAL_SYNTAX_FROM_ARGUMENT_MUST_BE_SMALLER_THAN_UNTIL_ARGUMENT);
-                }
-            }
-            if (fromCalendar != null) {
-                //noinspection HippoHstFilterInspection
-                filter.addGreaterOrEqualThan(OAI_PUBDATE, getPublicationDateAsString(fromCalendar));
-                query.setFilter(filter);
-            }
-            if (untilCalendar != null) {
-                //noinspection HippoHstFilterInspection
-                filter.addLessOrEqualThan(OAI_PUBDATE, getPublicationDateAsString(untilCalendar));
-                query.setFilter(filter);
-            }
+            applyCalendarFilter(query, from, until);
             filter.addLessThan(OAI_PUBDATE, getPublicationDateAsString(calendarFromResumptionToken));
         } catch (FilterException e) {
             throw new OAIException(OAIPMHerrorcodeType.BAD_RESUMPTION_TOKEN, THE_VALUE_OF_THE_RESUMPTION_TOKEN_ARGUMENT_IS_INVALID_OR_EXPIRED);

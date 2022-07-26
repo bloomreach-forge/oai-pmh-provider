@@ -3,8 +3,9 @@ package org.onehippo.forge.oaipmh.provider.api;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
-import org.apache.commons.collections.map.MultiKeyMap;
+import org.apache.commons.collections4.map.MultiKeyMap;
 import org.hippoecm.hst.content.beans.standard.HippoDocumentBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,12 +29,9 @@ public class OAIUtil implements InvocationHandler {
     public String getIdentifier(final HippoDocumentBean bean, Object... objects) {
         final Class<? extends HippoDocumentBean> aClass = bean.getClass();
         final Method[] methods = aClass.getMethods();
-        for (Method method : methods) {
-            if (method.isAnnotationPresent(OAIIdentifier.class) && method.getReturnType().equals(String.class)) {
-                return (String) invoke(bean, method, objects);
-            }
-        }
-        return null;
+        return Arrays.stream(methods)
+                .filter(method -> method.isAnnotationPresent(OAIIdentifier.class) && method.getReturnType().equals(String.class))
+                .findFirst().map(method -> (String) invoke(bean, method, objects)).orElse(null);
     }
 
     public Object delegate(final HippoDocumentBean bean, final String prefix, Object... objects) {

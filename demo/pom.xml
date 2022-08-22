@@ -5,14 +5,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>14.0.0</version>
+    <version>15.1.0</version>
   </parent>
 
   <name>Bloomreach OAI-PMH Provider Demo</name>
   <description>Bloomreach OAI-PMH Provider Demo</description>
   <groupId>org.bloomreach.forge.oai-pmh-provider</groupId>
   <artifactId>oai-pmh-demo</artifactId>
-  <version>5.0.0</version>
+  <version>6.0.0</version>
   <packaging>pom</packaging>
 
   <!-- 
@@ -48,8 +48,10 @@
   <ciManagement/>
   <distributionManagement>
     <repository>
-      <id>-</id>
-      <url>-</url>
+      <name>Hippo Maven 2 Forge Repository</name>
+      <id>hippo-maven2-forge</id>
+      <url>https://maven.onehippo.com/content/repositories/forge-releases/</url>
+      <uniqueVersion>false</uniqueVersion>
     </repository>
     <snapshotRepository>
       <id>-</id>
@@ -64,7 +66,7 @@
     <!-- ***END temporary override of versions*** -->
     <forge.oaipmh.version>${project.version}</forge.oaipmh.version>
 
-    <essentials.version>14.0.0</essentials.version>
+    <essentials.version>15.1.0</essentials.version>
     <jsp-api.version>2.2</jsp-api.version>
     <taglibs.version>1.2.5</taglibs.version>
 
@@ -79,6 +81,12 @@
       <id>hippo</id>
       <name>Hippo Maven 2 repository.</name>
       <url>https://maven.onehippo.com/maven2/</url>
+    </repository>
+    <repository>
+      <id>hippo-maven2-forge</id>
+      <name>Hippo Maven 2 Forge repository</name>
+      <url>https://maven.onehippo.com/maven2-forge/</url>
+      <snapshots />
     </repository>
   </repositories>
 

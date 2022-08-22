@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,12 +28,13 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.ws.WebServiceException;
 
 import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.time.FastDateFormat;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.FastDateFormat;
 import org.hippoecm.hst.configuration.hosting.Mount;
 import org.hippoecm.hst.content.beans.Node;
 import org.hippoecm.hst.content.beans.query.HstQuery;
 import org.hippoecm.hst.content.beans.query.HstQueryResult;
+import org.hippoecm.hst.content.beans.query.exceptions.FilterException;
 import org.hippoecm.hst.content.beans.query.exceptions.QueryException;
 import org.hippoecm.hst.content.beans.query.filter.Filter;
 import org.hippoecm.hst.content.beans.standard.HippoBean;
@@ -214,9 +216,7 @@ public abstract class BaseOAIResource extends AbstractResource {
         final ListMetadataFormatsType formats = new ListMetadataFormatsType();
         final List<MetadataFormatType> metadataFormatTypes = getMetadataFormatTypes();
         if (metadataFormatTypes != null && !metadataFormatTypes.isEmpty()) {
-            for (MetadataFormatType type : metadataFormatTypes) {
-                formats.getMetadataFormat().add(type);
-            }
+            metadataFormatTypes.forEach(type -> formats.getMetadataFormat().add(type));
         }
         oaipmHtype.setListMetadataFormats(formats);
     }
@@ -304,13 +304,9 @@ public abstract class BaseOAIResource extends AbstractResource {
     private void loadListSets(final RestContext context) throws IOException, ClassNotFoundException {
         final List<Class<?>> annotatedClasses = new ArrayList<>();
         includeAnnotatedTopLevelClassesFromBeansPackage(annotatedClasses);
-        for (Class<?> clazz : annotatedClasses) {
-            if (OAIBean.class.isAssignableFrom(clazz) && !clazz.equals(OAIBean.class)) {
-                if (clazz.isAnnotationPresent(Node.class)) {
-                    SETMAP.put(StringUtils.substringAfter(clazz.getAnnotation(Node.class).jcrType(), ":"), (Class<? extends OAIBean>) clazz);
-                }
-            }
-        }
+        annotatedClasses.stream().filter(clazz -> OAIBean.class.isAssignableFrom(clazz) && !clazz.equals(OAIBean.class))
+                .filter(clazz -> clazz.isAnnotationPresent(Node.class))
+                .forEach(clazz -> SETMAP.put(StringUtils.substringAfter(clazz.getAnnotation(Node.class).jcrType(), ":"), (Class<? extends OAIBean>) clazz));
     }
 
     private void listSets(final RestContext context, final OAIPMHtype oaipmHtype) throws OAIException, IOException, ClassNotFoundException {
@@ -319,9 +315,9 @@ public abstract class BaseOAIResource extends AbstractResource {
         final List<SetType> setTypes = listSetsType.getSet();
         final List<Class<?>> annotatedClasses = new ArrayList<>();
         includeAnnotatedTopLevelClassesFromBeansPackage(annotatedClasses);
-        for (Class<?> clazz : annotatedClasses) {
-            if (OAIBean.class.isAssignableFrom(clazz) && !clazz.equals(OAIBean.class)) {
-                if (clazz.isAnnotationPresent(Node.class)) {
+        annotatedClasses.stream().filter(clazz -> OAIBean.class.isAssignableFrom(clazz) && !clazz.equals(OAIBean.class))
+                .filter(clazz -> clazz.isAnnotationPresent(Node.class))
+                .forEach(clazz -> {
                     final SetType setType = new SetType();
                     setType.setSetSpec(StringUtils.substringAfter(clazz.getAnnotation(Node.class).jcrType(), ":"));
                     if (clazz.isAnnotationPresent(OAI.class)) {
@@ -331,9 +327,7 @@ public abstract class BaseOAIResource extends AbstractResource {
                     }
                     SETMAP.put(setType.getSetSpec(), (Class<? extends OAIBean>) clazz);
                     setTypes.add(setType);
-                }
-            }
-        }
+                });
         oaipmHtype.setListSets(listSetsType);
     }
 
@@ -412,9 +406,10 @@ public abstract class BaseOAIResource extends AbstractResource {
         listRecordsOrIdentifiers(context, oaipmHtype, metaPrefix, resumptionToken, set, from, until, true);
     }
 
-    private void listRecordsOrIdentifiers(final RestContext context, final OAIPMHtype oaipmHtype, String metaPrefix, final String resumptionToken, final String set, String from, String until, final boolean identfiersOnly) throws OAIException, QueryException, IOException, ClassNotFoundException {
+    private void listRecordsOrIdentifiers(final RestContext context, final OAIPMHtype oaipmHtype, String metaPrefix, final String resumptionToken, final String set, String from, String until, final boolean identifiersOnly) throws OAIException, QueryException, IOException, ClassNotFoundException {
         processBase(context, LISTRECORDIDENTIFIER_ALLOWED);
         boolean useResumptionToken = false;
+        final HstQuery query;
         if (StringUtils.isNotEmpty(resumptionToken)) {
             if (!isExclusive(resumptionToken, metaPrefix, set)) {
                 throw new OAIException(OAIPMHerrorcodeType.BAD_ARGUMENT, THE_REQUEST_INCLUDES_ILLEGAL_ARGUMENTS_IS_MISSING_REQUIRED_ARGUMENTS_INCLUDES_A_REPEATED_ARGUMENT_OR_VALUES_FOR_ARGUMENTS_HAVE_AN_ILLEGAL_SYNTAX_RESUMPTION_TOKEN_ARGUMENT_MAY_ONLY_BE_USED_EXCLUSIVELY);
@@ -428,21 +423,6 @@ public abstract class BaseOAIResource extends AbstractResource {
             throw new OAIException(OAIPMHerrorcodeType.BAD_ARGUMENT, THE_REQUEST_INCLUDES_ILLEGAL_ARGUMENTS_IS_MISSING_REQUIRED_ARGUMENTS_INCLUDES_A_REPEATED_ARGUMENT_OR_VALUES_FOR_ARGUMENTS_HAVE_AN_ILLEGAL_SYNTAX);
         }
         validateMetaDataPrefix(metaPrefix);
-
-        final Calendar fromCalendar;
-        final Calendar untilCalendar;
-        try {
-            fromCalendar = getSimpleDate(from);
-            untilCalendar = getSimpleDate(until);
-        } catch (ParseException e) {
-            throw new OAIException(OAIPMHerrorcodeType.BAD_ARGUMENT, THE_REQUEST_INCLUDES_ILLEGAL_ARGUMENTS_IS_MISSING_REQUIRED_ARGUMENTS_INCLUDES_A_REPEATED_ARGUMENT_OR_VALUES_FOR_ARGUMENTS_HAVE_AN_ILLEGAL_SYNTAX_FROM_ARGUMENT_MUST_BE_SMALLER_THAN_UNTIL_ARGUMENT);
-        }
-        if (fromCalendar != null && untilCalendar != null) {
-            if (fromCalendar.getTimeInMillis() > untilCalendar.getTimeInMillis()) {
-                throw new OAIException(OAIPMHerrorcodeType.BAD_ARGUMENT, THE_REQUEST_INCLUDES_ILLEGAL_ARGUMENTS_IS_MISSING_REQUIRED_ARGUMENTS_INCLUDES_A_REPEATED_ARGUMENT_OR_VALUES_FOR_ARGUMENTS_HAVE_AN_ILLEGAL_SYNTAX_FROM_ARGUMENT_MUST_BE_SMALLER_THAN_UNTIL_ARGUMENT);
-            }
-        }
-        final HstQuery query;
         if (SETMAP.isEmpty()) {
             loadListSets(context);
         }
@@ -455,20 +435,7 @@ public abstract class BaseOAIResource extends AbstractResource {
         } else {
             query = generateHstQuery(context, OAIBean.class, true);
         }
-        if (fromCalendar != null) {
-            //todo
-            final Filter filter = getFilter(query);
-            //noinspection HippoHstFilterInspection
-            filter.addGreaterOrEqualThan(OAI_PUBDATE, getPublicationDateAsString(fromCalendar));
-            query.setFilter(filter);
-        }
-        if (untilCalendar != null) {
-            //todo
-            final Filter filter = getFilter(query);
-            //noinspection HippoHstFilterInspection
-            filter.addLessOrEqualThan(OAI_PUBDATE, getPublicationDateAsString(untilCalendar));
-            query.setFilter(filter);
-        }
+        applyCalendarFilter(query, from, until);
         if (useResumptionToken) {
             processQueryBasedOnResumptionToken(query, resumptionToken);
         }
@@ -479,7 +446,7 @@ public abstract class BaseOAIResource extends AbstractResource {
         if (totalSize <= 0) {
             throw new OAIException(OAIPMHerrorcodeType.NO_RECORDS_MATCH, THE_COMBINATION_OF_THE_VALUES_OF_THE_FROM_UNTIL_SET_AND_METADATA_PREFIX_ARGUMENTS_RESULTS_IN_AN_EMPTY_LIST);
         }
-        if (identfiersOnly) {
+        if (identifiersOnly) {
             populateListIdentifiers(context, queryResult, oaipmHtype, metaPrefix, resumptionToken, set, from, until);
         } else {
             populateListRecords(context, queryResult, oaipmHtype, metaPrefix, resumptionToken, set, from, until);
@@ -560,10 +527,8 @@ public abstract class BaseOAIResource extends AbstractResource {
             final MetadataType meta = createMetadataType();
 
             // populate meta:
-            //if (!identfiersOnly) {
             meta.setAny(populateMetaData(context, bean, metaPrefix));
             record.setMetadata(meta);
-            //}
 
             lastKnownPublicationDate = publicationDate;
         }
@@ -639,6 +604,31 @@ public abstract class BaseOAIResource extends AbstractResource {
 
     protected abstract String getMetadataPrefixFromResumptionToken(final String resumptionToken) throws OAIException;
 
+    protected void applyCalendarFilter(final HstQuery query, final String from, final String until) throws OAIException, FilterException {
+        final Filter filter = getFilter(query);
+        final Calendar fromCalendar;
+        final Calendar untilCalendar;
+        try {
+            fromCalendar = getSimpleDate(from);
+            untilCalendar = getSimpleDate(until);
+        } catch (ParseException e) {
+            throw new OAIException(OAIPMHerrorcodeType.BAD_ARGUMENT, THE_REQUEST_INCLUDES_ILLEGAL_ARGUMENTS_IS_MISSING_REQUIRED_ARGUMENTS_INCLUDES_A_REPEATED_ARGUMENT_OR_VALUES_FOR_ARGUMENTS_HAVE_AN_ILLEGAL_SYNTAX_FROM_ARGUMENT_MUST_BE_SMALLER_THAN_UNTIL_ARGUMENT);
+        }
+        if (fromCalendar != null && untilCalendar != null) {
+            if (fromCalendar.getTimeInMillis() > untilCalendar.getTimeInMillis()) {
+                throw new OAIException(OAIPMHerrorcodeType.BAD_ARGUMENT, THE_REQUEST_INCLUDES_ILLEGAL_ARGUMENTS_IS_MISSING_REQUIRED_ARGUMENTS_INCLUDES_A_REPEATED_ARGUMENT_OR_VALUES_FOR_ARGUMENTS_HAVE_AN_ILLEGAL_SYNTAX_FROM_ARGUMENT_MUST_BE_SMALLER_THAN_UNTIL_ARGUMENT);
+            }
+        }
+        if (fromCalendar != null) {
+            filter.addGreaterOrEqualThan(OAI_PUBDATE, getPublicationDateAsString(fromCalendar));
+            query.setFilter(filter);
+        }
+        if (untilCalendar != null) {
+            filter.addLessOrEqualThan(OAI_PUBDATE, getPublicationDateAsString(untilCalendar));
+            query.setFilter(filter);
+        }
+    }
+
     /**
      * UTILITIES:
      */
@@ -657,11 +647,11 @@ public abstract class BaseOAIResource extends AbstractResource {
         return instance;
     }
 
-    private boolean isExclusive(String value, String... othervalues) {
+    private boolean isExclusive(String value, String... otherValues) {
         if (StringUtils.isEmpty(value)) {
             return false;
         } else {
-            for (String otherValue : othervalues) {
+            for (String otherValue : otherValues) {
                 if (StringUtils.isNotEmpty(otherValue)) {
                     return false;
                 }
@@ -680,13 +670,7 @@ public abstract class BaseOAIResource extends AbstractResource {
 
     private void validateMetaDataPrefix(final String metaPrefix) throws OAIException {
         final List<MetadataFormatType> metadataFormatTypes = getMetadataFormatTypes();
-        boolean metaPrefixExists = false;
-        for (MetadataFormatType type : metadataFormatTypes) {
-            if (type.getMetadataPrefix().equals(metaPrefix)) {
-                metaPrefixExists = true;
-                break;
-            }
-        }
+        boolean metaPrefixExists = metadataFormatTypes.stream().anyMatch(type -> type.getMetadataPrefix().equals(metaPrefix));
         if (!metaPrefixExists) {
             throw new OAIException(OAIPMHerrorcodeType.CANNOT_DISSEMINATE_FORMAT, THE_METADATA_FORMAT_IDENTIFIED_BY_THE_VALUE_GIVEN_FOR_THE_METADATA_PREFIX_ARGUMENT_IS_NOT_SUPPORTED_BY_THE_ITEM_OR_BY_THE_REPOSITORY);
         }
@@ -694,12 +678,7 @@ public abstract class BaseOAIResource extends AbstractResource {
 
     private void processBase(final RestContext context, final Set<String> allowed) throws OAIException {
         final MultivaluedMap<String, String> pathParameters = context.getUriInfo().getQueryParameters();
-        List<String> list = new ArrayList<String>();
-        for (String key : pathParameters.keySet()) {
-            if (!allowed.contains(key)) {
-                list.add(key);
-            }
-        }
+        List<String> list = pathParameters.keySet().stream().filter(key -> !allowed.contains(key)).collect(Collectors.toList());
         if (!list.isEmpty()) {
             throw new OAIException(OAIPMHerrorcodeType.BAD_ARGUMENT, String.format(THE_REQUEST_INCLUDES_ILLEGAL_ARGUMENTS_IS_MISSING_REQUIRED_ARGUMENTS_INCLUDES_A_REPEATED_ARGUMENT_OR_VALUES_FOR_ARGUMENTS_HAVE_AN_ILLEGAL_SYNTAX_ARGUMENT_S_S_IS_ARE_ILLEGAL, StringUtils.join(list.toArray(), ",")));
         }
@@ -748,15 +727,13 @@ public abstract class BaseOAIResource extends AbstractResource {
      *
      * @param verb
      */
-    private boolean validateVerb(String verb) throws OAIException {
-        if (verb == null) {
+    private void validateVerb(String verb) throws OAIException {
+        if (StringUtils.isEmpty(verb)) {
             throw new OAIException(OAIPMHerrorcodeType.BAD_VERB, BAD_VERB_NO_VERB);
         }
-        final boolean valid = VERB_VALUES.contains(verb);
-        if (!valid) {
+        if (!VERB_VALUES.contains(verb)) {
             throw new OAIException(OAIPMHerrorcodeType.BAD_VERB, BAD_VERB_NOT_LEGAL);
         }
-        return valid;
     }
 
 

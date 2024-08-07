@@ -9,6 +9,6 @@
         xmlns = {
                 @XmlNs(prefix = "oai_dc", namespaceURI = "http://purl.org/dc/elements/1.1/")
         }) package org.onehippo.forge.oaipmh.provider.model.oai.dc;
-import javax.xml.bind.annotation.XmlNs;
-import javax.xml.bind.annotation.XmlNsForm;
-import javax.xml.bind.annotation.XmlSchema;
+import jakarta.xml.bind.annotation.XmlNs;
+import jakarta.xml.bind.annotation.XmlNsForm;
+import jakarta.xml.bind.annotation.XmlSchema;

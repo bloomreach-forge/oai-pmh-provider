@@ -2,7 +2,7 @@ package org.onehippo.forge.oaipmh.provider.bean;
 
 import java.util.Calendar;
 
-import javax.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBElement;
 
 import org.hippoecm.hst.content.beans.Node;
 import org.hippoecm.hst.content.beans.standard.HippoDocument;

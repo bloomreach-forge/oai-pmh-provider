@@ -46,6 +46,7 @@
     <dependency>
       <groupId>org.bloomreach.forge.oai-pmh-provider</groupId>
       <artifactId>oai-pmh-provider-repository</artifactId>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
 </project>

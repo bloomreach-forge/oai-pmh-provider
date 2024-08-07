@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>15.1.0</version>
+    <version>16.0.0</version>
   </parent>
 
   <name>Bloomreach OAI-PMH Provider</name>
@@ -16,8 +16,8 @@
   <packaging>pom</packaging>
 
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <scm>
@@ -42,16 +42,16 @@
 
   <distributionManagement>
     <repository>
-      <name>Hippo Maven 2 Forge Repository</name>
-      <id>hippo-maven2-forge</id>
-      <url>https://maven.onehippo.com/content/repositories/forge-releases/</url>
+      <name>Bloomreach Maven 2 Forge Repository</name>
+      <id>bloomreach-maven2-forge</id>
+      <url>https://maven.bloomreach.com/content/repositories/forge-releases/</url>
       <uniqueVersion>false</uniqueVersion>
     </repository>
   </distributionManagement>
 
   <issueManagement>
     <system>Hippo JIRA</system>
-    <url>https://issues.onehippo.com/browse/HIPFORGE</url>
+    <url>https://issues.onehippo.com/browse/FORGE</url>
   </issueManagement>
 
   <modules>
@@ -110,22 +110,10 @@
 
   <repositories>
     <repository>
-      <id>hippo-maven2-forge</id>
-      <name>Bloomreach Forge Maven 2 repository.</name>
-      <url>https://maven.onehippo.com/maven2-forge/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <layout>default</layout>
-    </repository>
-    <repository>
-      <id>hippo-maven2</id>
-      <name>Hippo maven 2 repository.</name>
-      <url>https://maven.onehippo.com/maven2/</url>
-      <snapshots/>
+      <id>bloomreach</id>
+      <name>Bloomreach Maven 2 repository</name>
+      <url>http://maven.bloomreach.com/maven2/</url>
+      <snapshots />
       <releases>
         <updatePolicy>never</updatePolicy>
       </releases>
@@ -142,7 +130,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>${maven.plugin.site.version}</version>
       </plugin>
     </plugins>
   </build>
@@ -155,7 +142,6 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
-            <version>${maven.plugin.site.version}</version>
             <configuration>
               <outputDirectory>docs</outputDirectory>
             </configuration>

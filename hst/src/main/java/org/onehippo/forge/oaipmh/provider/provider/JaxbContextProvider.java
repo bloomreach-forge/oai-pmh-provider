@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2022 Bloomreach (http://www.bloomreach.com)
+ * Copyright 2015-2024 Bloomreach (http://www.bloomreach.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.ext.ContextResolver;
-import javax.ws.rs.ext.Provider;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.ext.ContextResolver;
+import jakarta.ws.rs.ext.Provider;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;

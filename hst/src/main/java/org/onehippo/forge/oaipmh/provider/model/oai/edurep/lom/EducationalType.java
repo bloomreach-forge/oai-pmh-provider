@@ -4,14 +4,14 @@ package org.onehippo.forge.oaipmh.provider.model.oai.edurep.lom;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
-import javax.xml.bind.annotation.XmlMixed;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlElementRefs;
+import jakarta.xml.bind.annotation.XmlMixed;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -85,19 +85,19 @@ public class EducationalType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link DifficultyType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link DifficultyType }{@code >}
      * {@link String }
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link LearningresourcetypeType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link ContextType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link TypicalagerangeType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link TypicallearningtimeType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link InteractivitylevelType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link LearningresourcetypeType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ContextType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link TypicalagerangeType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link TypicallearningtimeType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link InteractivitylevelType }{@code >}
      * {@link Object }
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link IntendedenduserroleType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link InteractivitytypeType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link SemanticdensityType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link DescriptionType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link IntendedenduserroleType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link InteractivitytypeType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link SemanticdensityType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link DescriptionType }{@code >}
      * 
      * 
      */

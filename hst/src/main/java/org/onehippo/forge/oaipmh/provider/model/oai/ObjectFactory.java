@@ -1,6 +1,7 @@
 package org.onehippo.forge.oaipmh.provider.model.oai;
 
-import javax.xml.bind.annotation.XmlRegistry;
+import jakarta.xml.bind.annotation.XmlRegistry;
+
 import javax.xml.namespace.QName;
 
 
@@ -148,7 +149,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link OAIPMHtype }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link OAIPMHtype }{@code >}}
      */
 
     public OAIPMHtype createOAIPMH(OAIPMHtype value) {

@@ -23,6 +23,14 @@
   </properties>
   <body>
     <section name="Release Notes">
+      <subsection name="7.0.0">
+        <p class="smallinfo">Release Date: 07 August 2024</p>
+        <ul>
+          <li><a href="https://issues.onehippo.com/browse/FORGE-526">FORGE-526</a> -
+            Upgrade to Bloomreach Experience Manager 15, JDK 17
+          </li>
+        </ul>
+      </subsection>
       <subsection name="5.0.0">
         <p class="smallinfo">Release Date: 14 September 2020</p>
         <ul>

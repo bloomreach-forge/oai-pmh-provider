@@ -1,9 +1,10 @@
 
 package org.onehippo.forge.oaipmh.provider.model.oai.dc;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
-import javax.xml.bind.annotation.XmlRegistry;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlElementDecl;
+import jakarta.xml.bind.annotation.XmlRegistry;
+
 import javax.xml.namespace.QName;
 
 
@@ -65,7 +66,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "rights")
@@ -74,7 +75,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "relation")
@@ -83,7 +84,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "format")
@@ -92,7 +93,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "date")
@@ -101,7 +102,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "type")
@@ -110,7 +111,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "creator")
@@ -119,7 +120,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "publisher")
@@ -128,7 +129,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "subject")
@@ -137,7 +138,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link OaiDcType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link OaiDcType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.openarchives.org/OAI/2.0/oai_dc/", name = "dc")
@@ -146,7 +147,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "language")
@@ -155,7 +156,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "identifier")
@@ -164,7 +165,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "title")
@@ -173,7 +174,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "source")
@@ -182,7 +183,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "coverage")
@@ -191,7 +192,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "contributor")
@@ -200,7 +201,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link org.onehippo.forge.oaipmh.provider.model.oai.dc.ElementType }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://purl.org/dc/elements/1.1/", name = "description")

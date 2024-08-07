@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.bloomreach.forge.oai-pmh-provider</groupId>
     <artifactId>oai-pmh-demo-site</artifactId>
-    <version>6.0.0</version>
+    <version>7.0.0</version>
   </parent>
   <artifactId>oai-pmh-demo-components</artifactId>
   <packaging>jar</packaging>
@@ -13,19 +13,27 @@
   <description>Bloomreach OAI-PMH Provider Demo Site Components</description>
 
   <dependencies>
+
+    <!--oai-pmh dependencies-->
     <dependency>
-      <groupId>javax.servlet.jsp</groupId>
-      <artifactId>jsp-api</artifactId>
+      <groupId>org.bloomreach.forge.oai-pmh-provider</groupId>
+      <artifactId>oai-pmh-provider-hst</artifactId>
+      <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.taglibs</groupId>
-      <artifactId>taglibs-standard-spec</artifactId>
+      <groupId>jakarta.servlet.jsp</groupId>
+      <artifactId>jakarta.servlet.jsp-api</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.taglibs</groupId>
-      <artifactId>taglibs-standard-impl</artifactId>
+      <groupId>com.bloomreach.xm</groupId>
+      <artifactId>taglibs-standard-spec-jakarta</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.bloomreach.xm</groupId>
+      <artifactId>taglibs-standard-impl-jakarta</artifactId>
     </dependency>
 
     <dependency>
@@ -44,11 +52,7 @@
       <artifactId>hippo-plugin-selections-hst-client</artifactId>
     </dependency>
 
-    <!--oai-pmh dependencies-->
-    <dependency>
-      <groupId>org.bloomreach.forge.oai-pmh-provider</groupId>
-      <artifactId>oai-pmh-provider-hst</artifactId>
-    </dependency>
+
   </dependencies>
   <build>
     <resources>

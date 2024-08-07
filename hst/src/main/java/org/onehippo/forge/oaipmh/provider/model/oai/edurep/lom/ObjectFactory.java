@@ -1,9 +1,10 @@
 
 package org.onehippo.forge.oaipmh.provider.model.oai.edurep.lom;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
-import javax.xml.bind.annotation.XmlRegistry;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlElementDecl;
+import jakarta.xml.bind.annotation.XmlRegistry;
+
 import javax.xml.namespace.QName;
 
 
@@ -511,7 +512,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link TypicallearningtimeType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link TypicallearningtimeType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "typicallearningtime")
@@ -520,7 +521,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link ValueType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ValueType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "value")
@@ -529,7 +530,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link RoleType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RoleType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "role")
@@ -538,7 +539,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link CentityType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link CentityType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "centity")
@@ -547,7 +548,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link TaxonType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link TaxonType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "taxon")
@@ -556,7 +557,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link AnnotationType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link AnnotationType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "annotation")
@@ -565,7 +566,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link CatalogentryType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link CatalogentryType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "catalogentry")
@@ -574,7 +575,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link LifecycleType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link LifecycleType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "lifecycle")
@@ -583,7 +584,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link DescriptionType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link DescriptionType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "description")
@@ -592,7 +593,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link RightsType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RightsType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "rights")
@@ -601,7 +602,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link InteractivitylevelType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link InteractivitylevelType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "interactivitylevel")
@@ -610,7 +611,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link DifficultyType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link DifficultyType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "difficulty")
@@ -619,7 +620,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "metadatascheme")
@@ -628,7 +629,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link TechnicalType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link TechnicalType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "technical")
@@ -637,7 +638,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link TaxonpathType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link TaxonpathType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "taxonpath")
@@ -646,7 +647,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link TypeType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link TypeType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "type")
@@ -655,7 +656,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link AggregationlevelType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link AggregationlevelType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "aggregationlevel")
@@ -664,7 +665,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link PersonType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link PersonType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "person")
@@ -673,7 +674,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link InstallationremarksType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link InstallationremarksType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "installationremarks")
@@ -682,7 +683,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link CopyrightandotherrestrictionsType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link CopyrightandotherrestrictionsType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "copyrightandotherrestrictions")
@@ -691,7 +692,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link LocationType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link LocationType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "location")
@@ -700,7 +701,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link EducationalType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link EducationalType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "educational")
@@ -709,7 +710,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link LangstringType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link LangstringType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "langstring")
@@ -718,7 +719,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "language")
@@ -727,7 +728,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "identifier")
@@ -736,7 +737,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "minimumversion")
@@ -745,7 +746,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link InteractivitytypeType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link InteractivitytypeType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "interactivitytype")
@@ -754,7 +755,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link TypicalagerangeType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link TypicalagerangeType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "typicalagerange")
@@ -763,7 +764,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link MetametadataType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link MetametadataType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "metametadata")
@@ -772,7 +773,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link RelationType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RelationType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "relation")
@@ -781,7 +782,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "format")
@@ -790,7 +791,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link CostType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link CostType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "cost")
@@ -799,7 +800,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link Integer }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link Integer }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "size")
@@ -808,7 +809,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link StructureType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link StructureType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "structure")
@@ -817,7 +818,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link LomType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link LomType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "lom")
@@ -826,7 +827,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link StatusType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link StatusType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "status")
@@ -835,7 +836,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "catalog")
@@ -844,7 +845,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link IntendedenduserroleType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link IntendedenduserroleType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "intendedenduserrole")
@@ -853,7 +854,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "datetime")
@@ -862,7 +863,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "id")
@@ -871,7 +872,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link TitleType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link TitleType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "title")
@@ -880,7 +881,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link OtherplatformrequirementsType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link OtherplatformrequirementsType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "otherplatformrequirements")
@@ -889,7 +890,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link NameType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link NameType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "name")
@@ -898,7 +899,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link LearningresourcetypeType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link LearningresourcetypeType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "learningresourcetype")
@@ -907,7 +908,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link PurposeType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link PurposeType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "purpose")
@@ -916,7 +917,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link DateType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link DateType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "date")
@@ -925,7 +926,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link KindType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link KindType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "kind")
@@ -934,7 +935,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link VersionType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link VersionType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "version")
@@ -943,7 +944,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link ContextType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ContextType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "context")
@@ -952,7 +953,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link DurationType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link DurationType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "duration")
@@ -961,7 +962,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link SourceType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link SourceType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "source")
@@ -970,7 +971,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link CoverageType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link CoverageType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "coverage")
@@ -979,7 +980,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link ClassificationType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ClassificationType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "classification")
@@ -988,7 +989,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link EntryType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link EntryType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "entry")
@@ -997,7 +998,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link ResourceType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ResourceType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "resource")
@@ -1006,7 +1007,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link ContributeType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ContributeType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "contribute")
@@ -1015,7 +1016,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link GeneralType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link GeneralType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "general")
@@ -1024,7 +1025,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "vcard")
@@ -1033,7 +1034,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link RequirementType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RequirementType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "requirement")
@@ -1042,7 +1043,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "maximumversion")
@@ -1051,7 +1052,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link SemanticdensityType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link SemanticdensityType }{@code >}}
      *
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "semanticdensity")
@@ -1060,7 +1061,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link KeywordType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link KeywordType }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.imsglobal.org/xsd/imsmd_v1p2", name = "keyword")

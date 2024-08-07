@@ -1,8 +1,9 @@
 package org.onehippo.forge.oaipmh.provider.model.oai.toolkit;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
-import javax.xml.bind.annotation.XmlRegistry;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlElementDecl;
+import jakarta.xml.bind.annotation.XmlRegistry;
+
 import javax.xml.namespace.QName;
 
 
@@ -44,7 +45,7 @@ public class ToolkitObjectFactory {
     }
 
     /**
-     * Create an instance of {@link javax.xml.bind.JAXBElement }{@code <}{@link ToolkitType }{@code >}}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ToolkitType }{@code >}}
      */
     @XmlElementDecl(namespace = "http://oai.dlib.vt.edu/OAI/metadata/toolkit", name = "toolkit")
     public JAXBElement<ToolkitType> createToolkit(ToolkitType value) {

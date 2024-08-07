@@ -4,14 +4,14 @@ package org.onehippo.forge.oaipmh.provider.model.oai.edurep.lom;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
-import javax.xml.bind.annotation.XmlMixed;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlElementRefs;
+import jakarta.xml.bind.annotation.XmlMixed;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -78,14 +78,14 @@ public class TechnicalType {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link DurationType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link Integer }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link InstallationremarksType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link OtherplatformrequirementsType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link LocationType }{@code >}
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link String }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link DurationType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link Integer }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link InstallationremarksType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link OtherplatformrequirementsType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link LocationType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}
      * {@link Object }
-     * {@link javax.xml.bind.JAXBElement }{@code <}{@link RequirementType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RequirementType }{@code >}
      * 
      * 
      */

@@ -3,13 +3,13 @@ package org.onehippo.forge.oaipmh.provider.model.oai;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlSeeAlso;
+import jakarta.xml.bind.annotation.XmlType;
 
 import org.onehippo.forge.oaipmh.provider.model.oai.toolkit.ToolkitType;
 
@@ -85,7 +85,7 @@ public class OAIPMHtype {
     /**
      * Gets the value of the responseDate property.
      *
-     * @return possible object is {@link javax.xml.datatype.XMLGregorianCalendar }
+     * @return possible object is {@link jakarta.xml.datatype.XMLGregorianCalendar }
      */
     public String getResponseDate() {
         return responseDate;
@@ -94,7 +94,7 @@ public class OAIPMHtype {
     /**
      * Sets the value of the responseDate property.
      *
-     * @param value allowed object is {@link javax.xml.datatype.XMLGregorianCalendar }
+     * @param value allowed object is {@link jakarta.xml.datatype.XMLGregorianCalendar }
      */
     public void setResponseDate(String value) {
         this.responseDate = value;

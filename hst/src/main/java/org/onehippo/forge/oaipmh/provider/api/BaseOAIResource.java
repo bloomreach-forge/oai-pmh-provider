@@ -441,7 +441,10 @@ public abstract class BaseOAIResource extends AbstractResource {
             processQueryBasedOnResumptionToken(query, resumptionToken);
         }
         query.setLimit(getPageSize());
-        query.addOrderByDescending(HIPPOSTDPUBWF_PUBLICATION_DATE);
+        // FORGE-563: Use oai:pubdate for sorting to ensure consistency with filtering and resumption tokens.
+        // This prevents timestamp synchronization issues between oai:pubdate and hippostdpubwf:publicationDate
+        // which can cause document count fluctuations and gaps in harvesting results.
+        query.addOrderByDescending(OAI_PUBDATE);
         final HstQueryResult queryResult = query.execute();
         final int totalSize = queryResult.getTotalSize();
         if (totalSize <= 0) {
@@ -605,6 +608,20 @@ public abstract class BaseOAIResource extends AbstractResource {
 
     protected abstract String getMetadataPrefixFromResumptionToken(final String resumptionToken) throws OAIException;
 
+    /**
+     * Apply calendar-based date range filtering to the query.
+     *
+     * FORGE-563: This method uses oai:pubdate exclusively for date filtering to maintain consistency
+     * with query sorting and resumption token logic. All date operations (filtering, sorting, and
+     * resumption tokens) must use the same property to prevent document count fluctuations and
+     * ensure reliable pagination during harvesting.
+     *
+     * @param query the HstQuery to apply filters to
+     * @param from the start date (optional)
+     * @param until the end date (optional)
+     * @throws OAIException if date validation fails
+     * @throws FilterException if filter cannot be applied
+     */
     protected void applyCalendarFilter(final HstQuery query, final String from, final String until) throws OAIException, FilterException {
         final Filter filter = getFilter(query);
         final Calendar fromCalendar;

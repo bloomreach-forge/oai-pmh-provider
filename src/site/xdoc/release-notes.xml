@@ -23,6 +23,28 @@
     </properties>
     <body>
         <section name="Release Notes">
+            <subsection name="7.0.1">
+                <p class="smallinfo">Release Date: TBD</p>
+                <ul>
+                    <li>
+                        <a href="https://issues.onehippo.com/browse/FORGE-563">FORGE-563</a>
+                        -
+                        <strong>Improved date property consistency for reliable harvesting.</strong>
+                        <p>
+                            Changed query sorting to use <code>oai:pubdate</code> instead of <code>hippostdpubwf:publicationDate</code>
+                            to ensure consistency across all date-related operations (filtering, sorting, and resumption tokens).
+                            This prevents timestamp synchronization issues that could cause document count fluctuations
+                            and gaps in harvesting results, especially in high-volume production environments with active editing.
+                        </p>
+                        <p>
+                            <strong>Migration Note:</strong> This is primarily an internal improvement. Existing resumption
+                            tokens will continue to work. For optimal results in production environments, consider using
+                            millisecond precision (<code>OAIPMHDateFunctionMillis</code>) to prevent document skipping
+                            during bulk publishing operations. See the <a href="usage.html">usage page</a> for configuration details.
+                        </p>
+                    </li>
+                </ul>
+            </subsection>
             <subsection name="7.0.0">
                 <p class="smallinfo">Release Date: 07 August 2024</p>
                 <ul>

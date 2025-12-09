@@ -139,6 +139,7 @@ public class OAIPMHResource extends BaseOAIResource {
             final String until = getFromResumptionTokenOrUseDefaultNull(resumptionToken, 5, null);
 
             applyCalendarFilter(query, from, until);
+            // FORGE-563: Filter using oai:pubdate to match sorting property for consistent pagination
             filter.addLessThan(OAI_PUBDATE, getPublicationDateAsString(calendarFromResumptionToken));
         } catch (FilterException e) {
             throw new OAIException(OAIPMHerrorcodeType.BAD_RESUMPTION_TOKEN, THE_VALUE_OF_THE_RESUMPTION_TOKEN_ARGUMENT_IS_INVALID_OR_EXPIRED);
@@ -161,6 +162,8 @@ public class OAIPMHResource extends BaseOAIResource {
     @Override
     protected void processResumptionToken(final RestContext context, final ListType listType, final String resumptionToken, final Calendar lastKnownPublicationDate, final String metaPrefix, final String set, final String from, final String until, final int totalSize) {
         final ResumptionTokenType resumptionTokenType = new ResumptionTokenType();
+        // FORGE-563: Format lastKnownPublicationDate using the same formatter that generates oai:pubdate.
+        // This ensures the resumption token value matches the oai:pubdate property used for filtering and sorting.
         final String time = getOaiDateFormatter().format(lastKnownPublicationDate.getTime());
 
         String resToken = String.format(RESUMPTION_TOKEN_FORMAT, time, getFromResumptionTokenOrUseDefault(resumptionToken, 2, metaPrefix), getFromResumptionTokenOrUseDefault(resumptionToken, 3, set), getFromResumptionTokenOrUseDefault(resumptionToken, 4, from), getFromResumptionTokenOrUseDefault(resumptionToken, 5, until));

@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.bloomreach.forge.oai-pmh-provider</groupId>
     <artifactId>oai-pmh-provider</artifactId>
-    <version>7.0.1-SNAPSHOT</version>
+    <version>8.0.0-SNAPSHOT</version>
   </parent>
 
   <name>Bloomreach OAI-PMH Provider Repository</name>

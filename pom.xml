@@ -5,19 +5,19 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-release</artifactId>
-    <version>16.0.0</version>
+    <version>17.0.0</version>
   </parent>
 
   <name>Bloomreach OAI-PMH Provider</name>
   <description>Bloomreach OAI-PMH Provider</description>
   <groupId>org.bloomreach.forge.oai-pmh-provider</groupId>
   <artifactId>oai-pmh-provider</artifactId>
-  <version>7.0.1-SNAPSHOT</version>
+  <version>8.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
   <scm>
@@ -112,7 +112,7 @@
     <repository>
       <id>bloomreach</id>
       <name>Bloomreach Maven 2 repository</name>
-      <url>http://maven.bloomreach.com/maven2/</url>
+      <url>https://maven.bloomreach.com/maven2/</url>
       <snapshots />
       <releases>
         <updatePolicy>never</updatePolicy>

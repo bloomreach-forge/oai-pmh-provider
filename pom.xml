@@ -18,6 +18,8 @@
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+
+    <maven.plugin.site.version>3.21.0</maven.plugin.site.version>
   </properties>
 
   <scm>
@@ -130,6 +132,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
+        <version>${maven.plugin.site.version}</version>
       </plugin>
     </plugins>
   </build>
@@ -142,6 +145,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-site-plugin</artifactId>
+            <version>${maven.plugin.site.version}</version>
             <configuration>
               <outputDirectory>docs</outputDirectory>
             </configuration>

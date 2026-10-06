@@ -50,6 +50,10 @@
             <th>Bloomreach XM Release Version</th>
           </tr>
           <tr>
+            <td>7.0.0</td>
+            <td>16.0.0</td>
+          </tr>
+          <tr>
             <td>6.0.0</td>
             <td>15.0.0</td>
           </tr>
